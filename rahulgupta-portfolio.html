@@ -308,6 +308,60 @@
     color:aliceblue(--muted);line-height:1.7;font-weight:300;
   }
   .exp-points li::before{content:'→';position:absolute;left:0;color:azure;font-size:0.8rem;top:3px}
+
+  /* PROJECT */
+  .project-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:20px;overflow:hidden;
+    transition:all 0.3s;
+  }
+  .project-card:hover{border-color:rgba(108,99,255,0.4);transform:translateY(-6px);box-shadow:0 30px 80px rgba(0,0,0,0.4)}
+  .project-header{
+    padding:2.5rem;
+    background:linear-gradient(135deg,var(--bg3),var(--surface2));
+    position:relative;overflow:hidden;min-height:180px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .project-header::before{
+    content:'';position:absolute;top:-60px;right:-60px;
+    width:200px;height:200px;border-radius:50%;
+    background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(255,101,132,0.15));
+    filter:blur(40px);
+  }
+  .project-number{
+    position:absolute;top:1.5rem;right:1.5rem;
+    font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;
+    color:rgba(255,255,255,0.04);line-height:1;
+  }
+  .project-badge{
+    display:inline-block;background:rgba(67,233,123,0.12);
+    border:1px solid rgba(67,233,123,0.25);border-radius:100px;
+    padding:4px 12px;font-size:0.72rem;color:var(--accent3);
+    letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem;
+  }
+  .project-title{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-0.02em}
+  .project-body{padding:2rem 2.5rem}
+  .project-desc{font-size:0.9rem;color:whitesmoke;line-height:1.8;margin-bottom:1.5rem;font-weight:300}
+  .project-techs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.75rem}
+  .tech-pill{
+    background:var(--bg);border:1px solid var(--border);
+    border-radius:6px;padding:4px 10px;font-size:0.75rem;
+    color:whitesmoke;font-weight:400;
+  }
+  .project-features{list-style:none;display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.75rem}
+  .project-features li{font-size:0.85rem;color:whitesmoke;padding-left:1.2rem;position:relative;font-weight:300}
+  .project-features li::before{content:'◆';position:absolute;left:0;font-size:0.5rem;color:var(--accent2);top:5px}
+  .project-links{display:flex;gap:0.75rem}
+  .proj-link{
+    flex:1;text-align:center;padding:0.65rem;border-radius:8px;
+    font-size:0.82rem;font-weight:500;text-decoration:none;
+    border:1px solid var(--border);color:whitesmoke;
+    transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .proj-link:hover{border-color:var(--accent);color:var(--accent);background:rgba(108,99,255,0.06)}
+  .proj-link.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .proj-link.primary:hover{background:#5a52e0}
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:2rem}
 </style>
 </head>
 <body>
@@ -559,6 +613,101 @@
           <li>Participated in code reviews and daily standups following Agile/Scrum methodology.</li>
           <li>Gained foundational experience with React.js and REST API integration during this internship.</li>
         </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2)">
+  <div class="container">
+    <span class="section-label reveal">Portfolio</span>
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <p class="section-sub reveal">A selection of projects that showcase my full stack capabilities.</p>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div class="project-number">01</div>
+          <span class="project-badge">Full Stack</span>
+          <div class="project-title">EventHub</div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">A full featured web application for manageing  events like Party, College Events, Hackathons with QR-based entry and real time attendance tracking.</p>
+          <div class="project-techs">
+            <span class="tech-pill">Frontend: HTML, CSS, JavaScript</span>
+            <span class="tech-pill">Backend: Python (Flask)</span>
+            <span class="tech-pill">SQLite</span>
+            <span class="tech-pill">Libraries: qrcode, OpenCV (for scanning)</span>
+          </div>
+          <ul class="project-features">
+            <li>Developed an admin module to manage events, track attendance in real time, and generate participation reports.</li>
+            <li>Built a student module enabling event browsing, registration, and QR code-based entry management.</li>
+            <li>Implemented a QR-based system for secure event entry and real-time attendance tracking with CSV export support.</li>
+            <!-- <li>Razorpay payment gateway integration</li> -->
+          </ul>
+          <div class="project-links">
+            <a href="http://127.0.0.1:5000/" class="proj-link primary">Live Demo ↗</a>
+            <a href="https://github.com/your-username/college-event-system.git" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-header">
+          <div class="project-number">02</div>
+          <span class="project-badge">SaaS Tool</span>
+          <div class="project-title">TaskFlow Pro</div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">A Kanban-style project management tool built for small teams, featuring real-time collaboration, task assignment, deadline tracking, and team activity feeds.</p>
+          <div class="project-techs">
+            <span class="tech-pill">React.js</span>
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Socket.io</span>
+            <span class="tech-pill">MongoDB</span>
+            <span class="tech-pill">CSS3</span>
+          </div>
+          <ul class="project-features">
+            <li>Real-time updates via WebSocket — no page refresh needed</li>
+            <li>Drag-and-drop board with multi-column task management</li>
+            <li>Email notifications using NodeMailer for task updates</li>
+            <li>Team analytics dashboard with productivity trends</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="proj-link primary">Live Demo ↗</a>
+            <a href="https://github.com/" class="proj-link">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-header">
+          <div class="project-number">03</div>
+          <span class="project-badge">Python · Data</span>
+          <div class="project-title">DataLens</div>
+        </div>
+        <div class="project-body">
+          <p class="project-desc">A Python-powered analytics dashboard that ingests CSV/Excel datasets, runs statistical summaries, and renders interactive charts in a React frontend via a Flask REST API.</p>
+          <div class="project-techs">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Flask</span>
+            <span class="tech-pill">React.js</span>
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Chart.js</span>
+          </div>
+          <ul class="project-features">
+            <li>CSV / Excel upload with pandas-powered data processing</li>
+            <li>Auto-generated charts: bar, line, pie, scatter based on column types</li>
+            <li>SQL query editor with results rendered as sortable tables</li>
+            <li>Export reports to PDF with one click</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" class="proj-link primary">Live Demo ↗</a>
+            <a href="https://github.com/" class="proj-link">GitHub</a>
+          </div>
+        </div>
       </div>
 
     </div>
