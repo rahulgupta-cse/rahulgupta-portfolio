@@ -189,6 +189,21 @@
   }
   .scroll-line{width:1px;height:50px;background:linear-gradient(var(--dim),transparent);animation:scrollAnim 1.5s ease-in-out infinite}
   @keyframes scrollAnim{0%,100%{opacity:0;transform:scaleY(0);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+
+  /* SECTION COMMON */
+  section{padding:6rem 4rem;position:relative}
+  .section-label{
+    font-size:0.75rem;font-weight:600;letter-spacing:0.15em;
+    text-transform:uppercase;color:var(--accent);
+    margin-bottom:0.75rem;display:block;
+  }
+  .section-title{
+    font-family:'fantasy',sans-serif;font-size:clamp(1rem,4vw,2rem);
+    color: azure;
+    font-weight:800;letter-spacing:-0.03em;margin-bottom:1rem;line-height:1.1;
+  }
+  .section-sub{font-size:1rem;color:azure;max-width:500px;line-height:1.8;margin-bottom:3rem;font-weight:300}
+  .container{max-width:1200px;margin:0 auto}
 </style>
 </head>
 <body>
