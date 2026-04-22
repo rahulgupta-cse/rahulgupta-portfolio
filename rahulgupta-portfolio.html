@@ -250,6 +250,41 @@
   .info-item{display:flex;flex-direction:column;gap:2px}
   .info-label{font-size:0.75rem;color:bisque;letter-spacing:0.05em;text-transform:uppercase}
   .info-val{font-size:0.9rem;color:var(--text);font-weight:400}
+
+  /* SKILLS */
+  .skills-bg{background:var(--bg2)}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+  .skill-card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:16px;padding:1.75rem;
+    transition:all 0.3s;position:relative;overflow:hidden;
+  }
+  .skill-card::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,var(--card-glow),transparent);
+    opacity:0;transition:opacity 0.3s;
+  }
+  .skill-card:hover{border-color:rgba(108,99,255,0.35);transform:translateY(-4px)}
+  .skill-card:hover::before{opacity:1}
+  .skill-icon{
+    width:44px;height:44px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:1.25rem;font-size:1.3rem;
+  }
+  .skill-card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:1rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .skill-tag{
+    background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.2);
+    border-radius:6px;padding:4px 10px;
+    font-size:0.78rem;color:#a8a3ff;font-weight:400;
+  }
+  .skill-bar-wrap{margin-top:0.75rem}
+  .skill-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;font-size:0.82rem}
+  .skill-name{color:whitesmoke;}
+  .skill-pct{color:var(--accent);font-weight:500}
+  .skill-bar{height:3px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:12px}
+  .skill-bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;width:0;transition:width 1s ease}
 </style>
 </head>
 <body>
@@ -369,6 +404,78 @@
           <span class="chip">Git & GitHub</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="container">
+    <span class="section-label reveal">Technical Skills</span>
+    <h2 class="section-title reveal">Tools I work with</h2>
+    <p class="section-sub reveal" style="color: aliceblue;">A curated set of technologies I use to build modern, production-grade applications.</p>
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-card-title">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+        <div class="skill-bar-wrap" style="margin-top:1.25rem">
+          <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-pct">92%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+          <div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div>
+          <div class="skill-row"><span class="skill-name">HTML/CSS</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-card-title">Frameworks & Libraries</div>
+        <div class="skill-tags">
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">REST API</span>
+        </div>
+        <div class="skill-bar-wrap" style="margin-top:1.25rem">
+          <div class="skill-row"><span class="skill-name">React.js</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+          <div class="skill-row"><span class="skill-name">Node.js</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          <div class="skill-row"><span class="skill-name">Express.js</span><span class="skill-pct">82%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-card-title">Database & Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">VS Code</span>
+        </div>
+        <div class="skill-bar-wrap" style="margin-top:1.25rem">
+          <div class="skill-row"><span class="skill-name">SQL / MySQL</span><span class="skill-pct">85%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+          <div class="skill-row"><span class="skill-name">Git & GitHub</span><span class="skill-pct">88%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+          <div class="skill-row"><span class="skill-name">REST API Design</span><span class="skill-pct">87%</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="87"></div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
