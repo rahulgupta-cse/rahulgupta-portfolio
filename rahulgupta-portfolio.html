@@ -986,6 +986,16 @@
       setTimeout(()=>{btn.innerHTML='Send Message <span>→</span>';btn.disabled=false},3000);
     },1200);
   }
+
+  // Hero entrance animation
+  document.addEventListener('DOMContentLoaded',()=>{
+    const heroContent=document.querySelector('.hero-content');
+    heroContent.style.opacity='0';heroContent.style.transform='translateY(40px)';
+    heroContent.style.transition='all 0.9s cubic-bezier(0.16,1,0.3,1)';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      heroContent.style.opacity='1';heroContent.style.transform='translateY(0)';
+    }));
+  });
 </script>
 </body>
 </html>
