@@ -204,6 +204,52 @@
   }
   .section-sub{font-size:1rem;color:azure;max-width:500px;line-height:1.8;margin-bottom:3rem;font-weight:300}
   .container{max-width:1200px;margin:0 auto}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .about-img-wrap{position:relative}
+  .about-img-frame{
+    width:100%;padding-top:110%;position:relative;
+    border-radius:20px;overflow:hidden;
+    border:1px solid var(--border);
+    background:var(--surface);
+  }
+  .about-img-frame-inner{
+    width: 100%;
+    height: auto;
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;
+    background:linear-gradient(135deg,var(--bg2),var(--surface));
+    color:transparent;
+    background-clip:text;-webkit-background-clip:text;
+  }
+  .about-img-accent{
+    position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;
+    border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'fantasy',sans-serif;font-weight:800;font-size:1.1rem;
+    color:#fff;text-align:center;line-height:1.2;z-index:1;
+    box-shadow:0 20px 60px rgba(108,99,255,0.4);
+  }
+  .about-img-dots{
+    position:absolute;top:-15px;left:-15px;width:80px;height:80px;
+    background-image:radial-gradient(var(--dim) 1px,transparent 1px);
+    background-size:12px 12px;border-radius:8px;
+  }
+  .about-text{}
+  .about-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2rem}
+  .chip{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:100px;padding:6px 14px;
+    font-size:0.8rem;color:aliceblue;font-weight:400;
+    transition:all 0.2s;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(108,99,255,0.06)}
+  .about-info{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .info-item{display:flex;flex-direction:column;gap:2px}
+  .info-label{font-size:0.75rem;color:bisque;letter-spacing:0.05em;text-transform:uppercase}
+  .info-val{font-size:0.9rem;color:var(--text);font-weight:400}
 </style>
 </head>
 <body>
@@ -274,6 +320,57 @@
     <div class="scroll-line"></div>
   </div> -->
 </section>
-    
+    <!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-dots"></div>
+        <div class="about-img-frame">
+          <div class="about-img-frame-inner"><img src="assets/img1.jpg" alt=""></div>
+        </div>
+        <div class="about-img-accent">7.5<br/><span style="font-size:0.65rem;opacity:0.8">CGPA</span></div>
+      </div>
+      <div class="about-text">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">Crafting digital experiences that matter</h2>
+        <p style="color:whitesmoke;font-size:0.95rem;line-height:1.9;margin-bottom:1rem;font-weight:300">
+          I'm a Full Stack Web Developer from Varanasi. I started my journey at Kashi Institute of Technology. I have worked on multiple projects across diverse domains, building scalable and user-focused web applications.
+        </p>
+        <p style="color:white(--muted);font-size:0.95rem;line-height:1.9;font-weight:300">
+          My passion lies in writing clean, maintainable code and creating intuitive user experiences. I bridge the gap between design and engineering — equally comfortable building a pixel-perfect React UI or architecting a RESTful API in Node.js.
+        </p>
+        <div class="about-info reveal reveal-delay-2">
+          <div class="info-item">
+            <span class="info-label">Phone</span>
+            <span class="info-val">+91 7275011241</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <span class="info-val">toorahulgupta@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Location</span>
+            <span class="info-val">Varanasi, India</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Availability</span>
+            <span class="info-val" style="color:var(--accent3)">Open to Work</span>
+          </div>
+        </div>
+        <div class="about-chips reveal reveal-delay-3">
+          <span class="chip">React.js</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Python</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">Git & GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>
