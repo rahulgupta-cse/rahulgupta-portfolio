@@ -69,6 +69,19 @@
     transition:opacity 0.2s,transform 0.2s;
   }
   .nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+
+  /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+  .hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s}
+  .mobile-menu{
+    display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+    background:rgba(10,10,15,0.98);z-index:99;
+    flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{font-family:'Syne',sans-serif;font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;transition:color 0.2s}
+  .mobile-menu a:hover{color:var(--accent)}
+  .mobile-close{position:absolute;top:1.5rem;right:2rem;font-size:2rem;background:none;border:none;color:var(--muted);cursor:pointer}
 </style>
 </head>
 <body>
@@ -87,6 +100,16 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="mailto:toorahulgupta@gmail.com" style="color:var(--accent)">Hire Me →</a>
+</div>
     
 </body>
 </html>
